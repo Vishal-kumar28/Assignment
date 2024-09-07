@@ -19,7 +19,16 @@ function App() {
     ]);
   };
 
+  <input
+          type="file"
+          accept="image/*"
+          className="hidden"
+          onChange={handleAddImage}
+        />
+
   return (
+    <div className="bg-gray-800 text-gray-200 min-h-screen flex justify-center items-center">
+
     <div className="flex h-screen">
       <div className="w-1/2"></div>
 
@@ -67,47 +76,69 @@ function App() {
             )}
             {activeTab === 'Experiences' && (
               <p className="text-gray-400 text-sm">
-                Experiences content will go here.
+                Hello! I'm Vishal kumar,  I was born and
+                raised in Albany, NY & have been living in Santa Carla for the
+                past 10 years my wife Tiffany and my 4 year old twin
+                daughters- Emma and Ella. Both of them are just starting
+                school, so my calendar is usually blocked between 9-10 AM. This
+                is a...
               </p>
             )}
             {activeTab === 'Recommended' && (
               <p className="text-gray-400 text-sm">
-                Recommended content will go here.
+                Hello! I'm Vishal kumar, your sales rep here from Salesforce. I've been
+                working at this awesome company for 3 years now. I was born and
+                raised in Albany, NY & have been living in Santa Carla for the
+                past 10 years my wife Tiffany and my 4 year old twin
+                daughters- Emma and Ella. 
               </p>
             )}
           </div>
         </div>
-
+<hr></hr>
         {/* Widget 2: Gallery */}
-        <div className="bg-gray-800 rounded-md shadow-md p-4">
-          <div className="flex items-center justify-between mb-4">
-            <p className="text-gray-300 text-lg font-semibold">Gallery</p>
-            <button
-              className="bg-gray-600 hover:bg-gray-700 text-gray-200 font-bold py-2 px-4 rounded-md"
-              onClick={handleAddImage}
-            >
-              + ADD IMAGE
-            </button>
-          </div>
+        <div className="bg-gray-700 p-4 rounded-lg shadow-md">
+        <div className="flex justify-between items-center mb-2">
+                <h2 className="text-xl font-bold">Gallery</h2>
 
-          <div className="grid grid-cols-3 gap-4">
-            {galleryImages.map((image, index) => (
-              <div key={index} className="bg-gray-700 rounded-md">
-                <img src={image.src}  className="w-full h-full object-cover rounded-md" />
+                <div className="flex justify-center mt-4">
+                <button className="bg-gray-600 hover:bg-gray-500 px-4 py-2 rounded-md">
+                  + Add Image
+                </button>
               </div>
-            ))}
-          </div>
 
-          <div className="flex justify-between mt-4">
-            <button className="bg-gray-600 hover:bg-gray-700 text-gray-200 font-bold py-2 px-4 rounded-md">
-              ←
-            </button>
-            <button className="bg-gray-600 hover:bg-gray-700 text-gray-200 font-bold py-2 px-4 rounded-md">
-              →
-            </button>
-          </div>
+                
+              </div>
+
+              <div className="grid grid-cols-3 gap-4">
+              
+                <img
+                  src="./image.logo.jpg"
+                  alt="Gallery Image"
+                  className="rounded-lg"
+                />
+
+                <img
+                  src="./image.logo.jpg"
+                  alt="Gallery Image"
+                  className="rounded-lg"
+                />
+
+                <img
+                  src="./image.logo.jpg"
+                  alt="Gallery Image"
+                  className="rounded-lg"
+                />
+
+
+           
+
+
+              </div>
         </div>
+        <hr></hr>
       </div>
+    </div>
     </div>
   );
 }
